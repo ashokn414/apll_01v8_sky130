@@ -1,0 +1,15 @@
+.subckt vco_19_16 Vinvco osc
+X7 Vp Vn 0 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+X8 Vp Vp VDD VDD sky130_fd_pr__pfet_01v8 l={L} w={10*W}
+R1 Vn Vinvco 1
+XU22 osc_fb Osc inv_20_10
+XX3 n1 osc_fb Vp Vn cs_inv
+XX16 N005 n1 Vp Vn cs_inv
+XX17 N004 N005 Vp Vn cs_inv
+XX18 N003 N004 Vp Vn cs_inv
+XX19 N002 N003 Vp Vn cs_inv
+XX20 N001 N002 Vp Vn cs_inv
+XX21 osc_fb N001 Vp Vn cs_inv
+V1 VDD 0 1.8
+.ends vco_19_16
+

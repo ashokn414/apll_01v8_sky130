@@ -1,0 +1,22 @@
+.subckt freq_div_2 clock Q
+X1 N004 N002 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+VDD VDD 0 1.8
+X2 VDD N002 N004 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X5 N003 N004 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X6 VDD N004 N003 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X7 D clock_b N002 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X3 N002 clock D VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X4 N002 clock N003 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X8 N003 clock_b N002 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X9 Q N001 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X10 VDD N001 Q VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X11 D Q 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X12 VDD Q D VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X13 N004 clock N001 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X14 N001 clock_b N004 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X15 N001 clock_b D 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X16 D clock N001 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X17 clock_b clock 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X18 VDD clock clock_b VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+.ends freq_div_2
+

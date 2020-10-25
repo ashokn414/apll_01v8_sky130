@@ -1,0 +1,7 @@
+
+.subckt inverter in out VDD GND
+
+X1 out in GND GND sky130_fd_pr__nfet_01v8 l={L} w={W}
+X2 VDD in out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+
+.ends inverter

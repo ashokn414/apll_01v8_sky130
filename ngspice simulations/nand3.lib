@@ -1,0 +1,12 @@
+.subckt nand3 in1 in2 in3 in4 VDD GND out
+
+X1 out in1 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X2 VDD in2 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X3 VDD in1 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X4 N001 in2 N002 N002 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X5 N002 in3 N003 N003 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X6 VDD in3 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X7 N003 in4 GND GND sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X8 VDD in4 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+
+.ends nand3

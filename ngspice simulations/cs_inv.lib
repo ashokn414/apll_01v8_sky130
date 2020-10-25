@@ -1,0 +1,8 @@
+.subckt cs_inv In Out Vp Vn
+X1 N003 Vn 0 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+X4 N002 Vp N001 VDD sky130_fd_pr__pfet_01v8 l={L} w={4*W}
+X3 Out In N002 VDD sky130_fd_pr__pfet_01v8 l={L} w={4*W}
+X2 Out In N003 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+C1 Out 0 1f
+V1 N001 0 1.8
+.ends cs_inv
