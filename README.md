@@ -28,7 +28,7 @@ In view of its usefulness, the phase locked loop or PLL is found in many wireles
 the circuit simulated here uses PLL block to get desired frequency at it’s output (which is 8 times to that of input frequency provided).
 This IP block can be used for clock distribution for processor chip.  
 
-## 3.Sky130 PDK
+## 3. Sky130 PDK
 sky130_fd_pr
 
 ## 4. EDA Tools Used 
