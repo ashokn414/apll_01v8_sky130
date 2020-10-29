@@ -9,7 +9,7 @@ The On-chip clock multiplier is present in almost all synchronous processor chip
 ## Table of Contents
 - [1. Introduction to On-chip clock multiplier](#1-introduction-to-On-chip-clock-multiplier)
 - [2. Theory](#2-Theory)
-- [3. Sky130 PDK](#3-Sky130 PDK)
+- [3. Sky130_PDK](#3-Sky130_PDK)
 - [4. EDA Tools Used](#4-eda-tools-used)
 - [5. Pre-layout Simulations](#5-Pre-layout-Simulations)
 - [6. Author](#6-Author)
@@ -28,7 +28,7 @@ In view of its usefulness, the phase locked loop or PLL is found in many wireles
 the circuit simulated here uses PLL block to get desired frequency at it’s output (which is 8 times to that of input frequency provided).
 This IP block can be used for clock distribution for processor chip.  
 
-## 3. Sky130 PDK
+## 3. Sky130_PDK
 sky130_fd_pr
 
 ## 4. EDA Tools Used 
