@@ -40,9 +40,9 @@ The design has been built using open-source EDA tools. The library used is sky13
 
 ## 5. Steps for simulation
 1. To make the simulation files work you need to include libraries of sky130_fd_pr that consists of primitive cells of sky130.
-2.For this, you need to clone the repository of sky130_fd_pr into the working directory(i.e., clone the sky130_fd_pr into the directory in which your circuit files are present).
-The git clone command for the sky130_fd_pr is 
-<git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr>
+2. For this, you need to clone the repository of sky130_fd_pr into the working directory(i.e., clone the sky130_fd_pr into the directory in which your circuit files are present).
+3. The git clone command for the sky130_fd_pr is 
+git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
 
 For example, my circuit files are present in ashdir. then i need to clone sky130_fd_pr into ashdir (i.e., change directory to ashdir and then do the cloning).
 
