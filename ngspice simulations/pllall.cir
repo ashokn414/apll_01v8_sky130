@@ -13,15 +13,16 @@ XX7 N002 f_VCO/8 freq_div_2
 V1 f_in 0 PULSE 0 1.8 10p 60p 60p 100n 200n
 
 .include "sky130_fd_pr/models/corners/tt.spice"
-
+.include "sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice"
+.include "sky130_fd_pr/models/r+c/res_typical__cap_typical.spice"
 
 *V2 f_in 0 PULSE 0 1.8 10p 60p 60p 50n 100n
 *V3 f_in 0 PULSE 0 1.8 10p 60p 60p 41.665n 83.33n
 
 *___________LPF________________*
-C1 Vin_vco 0 200p
-C2 N001 0 500p
-R1 Vin_vco N001 500
+XC1 Vin_vco 0 sky130_fd_pr__cap_mim_m3_1 W=500 L=200 MF=1
+XC2 N001 0 sky130_fd_pr__cap_mim_m3_1 W=500 L=500 MF=1
+XR1 Vin_vco N001 0 sky130_fd_pr__res_high_po_5p73 l=7.6
 *______________________________*
 
 *__________________Subcircuits_____________________*
