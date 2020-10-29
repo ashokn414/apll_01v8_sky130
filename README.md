@@ -30,7 +30,7 @@ The circuit simulated here uses PLL block to get desired frequency at it’s out
 This IP block can be used for clock distribution for processor chip.  
 
 ## 3. Sky130_PDK
-sky130_fd_pr is the pdk file used in the simulations.
+sky130_fd_pr is the pdk file used in the simulations.The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone!
 more detailed info can be obtained at [skywater-pdk](https://github.com/google/skywater-pdk).
 
 ## 4. EDA Tools Used 
@@ -42,7 +42,7 @@ The design has been built using open-source EDA tools. The library used is sky13
 1. To make the simulation files work you need to include libraries of sky130_fd_pr that consists of primitive cells of sky130.
 2. For this, you need to clone the repository of sky130_fd_pr into the working directory(i.e., clone the sky130_fd_pr into the directory in which your circuit files are present).
 3. The git clone command for the sky130_fd_pr is 
-git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
+   `git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr  `
 
 For example, my circuit files are present in ashdir. then i need to clone sky130_fd_pr into ashdir (i.e., change directory to ashdir and then do the cloning).
 
