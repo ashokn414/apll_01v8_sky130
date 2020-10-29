@@ -39,13 +39,6 @@ The design has been built using open-source EDA tools. The library used is sky13
 ## 5. Pre-layout Simulations
 The complete circuit of PLL is built hierarchically using the following subcircuit blocks.
 
-</p>
-
-![Alt Text](https://github.com/parasgidd/avsdpll_3v3/blob/master/images/blockdiagram.jpg)
-
-</p>
-
-Fig: Block Diagrm of PLL Design.
 
 </p>
 
@@ -53,7 +46,7 @@ Fig: Block Diagrm of PLL Design.
 
 </p>
 
-![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/master/Images/Ngspice-simulations_5Mhz.jpg)
+![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/images/ngspice_sim_5mhz.PNG)
 
 </p>
 
@@ -76,10 +69,9 @@ fout - Output Frequency (Pink) </p>
 
 | Input Frequency | Output Frequency |
 | :---:  | :-: |
-|5MHz|39.73MHz|
-|10MHz|80.91MHz|
-|12MHz|96.1MHz|
-|12.5MHz|99.81MHz|
+|5MHz|40MHz|
+|10MHz|80.64MHz|
+|12MHz|96.15MHz|
 
 </p>
 
@@ -93,7 +85,7 @@ fout - Output Frequency (Pink) </p>
 
 ## 9. Acknowledgments
 - Kunal Ghosh, Co-founder VSD Corp. Pvt. Ltd.
-- Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm](https://github.com/neethujohny/avsdpll_3v3)
+- Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm OSU](https://github.com/neethujohny/avsdpll_3v3)
 
 
 ## 10. Contact Information - 
