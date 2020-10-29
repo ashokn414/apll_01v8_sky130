@@ -1,7 +1,7 @@
 ## 1. Introduction to On-chip clock multiplier
 This repository consists of simulation files and other relevant files on the On-chip clock multiplier using PLL (Fclkin—5MHz to 12MHz, Fclkout—40MHZ to 100MHZ at 1.8v) IP worked on in the VSD Online Internship.
 
-The target is to design a On-chip clock multiplier using the Sky130 Open PDK provided by Google. The problem statement is included in the file [Stage_1] (https://github.com/ashokn414/avsdpll_01v8_sky130/blob/master/Documents/Stage_1.pdf) are provided from VSD Corporation Pvt. Ltd.
+The target is to design a On-chip clock multiplier using the Sky130 Open PDK provided by Google. The problem statement is included in the file [specs](https://github.com/ashokn414/avsdpll_01v8_sky130/master/Documents/Stage_1.pdf) are provided from VSD Corporation Pvt. Ltd.
 The On-chip clock multiplier is present in almost all synchronous processor chips.
 
 
