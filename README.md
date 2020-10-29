@@ -89,20 +89,15 @@ fout - Output Frequency (Pink) </p>
 ## 8. Contributors 
 
 - **Venkata Ashok Kumar Nallaballe** 
-- **Paras Gidd** 
 - **Kunal Ghosh** 
-- **Philipp Gühring** 
 
 ## 9. Acknowledgments
 - Kunal Ghosh, Co-founder VSD Corp. Pvt. Ltd.
-- Philipp Gühring, Software Architect, LibreSilicon Association.
-- FOSSEE Team, IIT Bombay
-- R. Timothy Edwards, Open Circuit Design </p>
-And Last but not least, I would like to thank my **Parents & Teachers** who directly & indirectly helped me & their contribution is of great value for me.
+- Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm](https://github.com/neethujohny/avsdpll_3v3)
 
 
 ## 10. Contact Information - 
  - Venkata Ashok Kumar Nallaballe, B.Tech.( ECE ), JNTUA College of Engineering Anantapur , ashoknallaballe@gmail.com
  - Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalghosh@gmail.com
- - Philipp Gühring, Software Architect, LibreSilicon Association - pg@futureware.at
+ 
 
