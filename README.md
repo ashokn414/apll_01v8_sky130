@@ -78,7 +78,7 @@ fout - Output Frequency (Pink) </p>
 
 | Input Frequency | Output Frequency |
 | :---:  | :-: |
-|5MHz|40MHz|
+|5MHz|41.1MHz|
 |10MHz|80.64MHz|
 |12MHz|96.15MHz|
 
