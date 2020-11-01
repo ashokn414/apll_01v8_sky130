@@ -46,7 +46,7 @@ For example, my circuit files are present in ashdir. then i need to clone sky130
 
 
 ## 6. Pre-layout Simulations
-The PLL is designed with respect to the following Block-Diagram.
+The PLL is designed with respect to the following Block-Diagram. All the resistors,capacitors and transistors are modeled from sky130_fd_pr.
 
 
 </p>
