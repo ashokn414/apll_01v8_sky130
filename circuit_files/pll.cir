@@ -1,0 +1,68 @@
+********Final PLL*********
+**************************
+.param L=0.40
+.param W=0.42
+
+XX1 f_in f_VCO/8 up down pfd
+XX2 up down Vin_vco charge_pump
+XX3 Vin_vco f_out vco_19_16
+XX5 f_out N003 freq_div_2
+XX6 N003 N002 freq_div_2
+XX7 N002 f_VCO/8 freq_div_2
+
+****************************************************
+*_____________Library/subcircuit files______________
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/pfd.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/charge_pump.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/vco_19_16.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/freq_div_2.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/cs_inv.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/inverter.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/inv_20_10.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/nand1.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/nand2.lib"
+.include "/home/ashok/Desktop/tools/spice_exp/ashvsdpll/nand3.lib"
+
+.include "/home/ashok/sky130_fd_pr/models/corners/tt.spice"
+
+****************************************************
+
+
+
+*****************
+*input sources
+*V1=5MHz
+*V2=10MHz
+*V3=12MHz
+*****************
+
+
+********Connected input frequency=5MHz************
+V1 f_in 0 0 PULSE 0 1.8 10p 50p 50p 100n 200n
+**************************************************
+********Connected input frequency=10MHz************
+*V2 f_in 0 PULSE 0 1.8 10p 60p 60p 50n 100n
+**************************************************
+********Connected input frequency=12MHz************
+*V3 f_in 0 PULSE 0 1.8 10p 60p 60p 41.665n 83.33n
+**************************************************
+
+****************LPF******************************
+C1 Vin_vco 0 200p
+C2 N001 0 500p
+R1 Vin_vco N001 500
+************************************************
+
+
+************simulation commands**************
+.tran 1n 5u
+.ic V(Vin_vco) = 0
+.control
+run
+plot V(f_in)+8 V(up)+6 V(down)+4 V(Vin_vco)+2 V(f_out)
+*plot V(N002)
+*plot V(Vin_vco)
+*plot V(f_out)
+.endc
+.end
+

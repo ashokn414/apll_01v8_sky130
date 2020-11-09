@@ -1,0 +1,23 @@
+***nand1 circuit***
+.param L=0.15
+.param W=0.42
+.include "/home/ashok/sky130_fd_pr/models/corners/tt.spice"
+
+
+X1 out in1 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X2 VDD in2 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X3 VDD in1 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X4 N001 in2 N002 N002 sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X5 N002 in3 GND GND sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X6 VDD in3 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+
+***set gnd and power***
+ 
+Vdd VDD 0 1.8
+Vin1 in1 0 0 pulse(0 1.8 0 10p 10p 1n 2n) 
+Vin2 in2 0 0 pulse(0 1.8 0 10p 10p 0.5n 1n) 
+Vin3 in3 0 0 pulse(0 1.8 0 10p 10p 2n 4n)
+ 
+.op
+.tran 10p 6n
+.end

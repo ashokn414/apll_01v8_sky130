@@ -1,0 +1,172 @@
+***********************PLL-final*****************************
+
+.param L=0.40
+.param W=0.42
+
+
+XX1 f_in f_VCO/8 up down pfd
+XX2 up down Vin_vco charge_pump
+XX3 Vin_vco f_out vco_19_16
+XX5 f_out N003 freq_div_2
+XX6 N003 N002 freq_div_2
+XX7 N002 f_VCO/8 freq_div_2
+V1 f_in 0 PULSE 0 1.8 10p 60p 60p 100n 200n
+
+.include "sky130_fd_pr/models/corners/tt.spice"
+
+
+*V2 f_in 0 PULSE 0 1.8 10p 60p 60p 50n 100n
+*V3 f_in 0 PULSE 0 1.8 10p 60p 60p 41.665n 83.33n
+
+*___________LPF________________*
+C1 Vin_vco 0 200p
+C2 N001 0 500p
+R1 Vin_vco N001 500
+*______________________________*
+
+*__________________Subcircuits_____________________*
+
+******************PFD*******************************
+.subckt pfd f_clk_in f_VCO up down
+XX1 N001 N005 N002 vddd 0 nand1
+XX2 N002 N008 N006 vddd 0 nand1
+XX3 N006 N007 N008 vddd 0 nand1
+XX4 N007 N010 N011 vddd 0 nand1
+XX5 N011 N009 N010 vddd 0 nand1
+XX6 N013 N012 N009 vddd 0 nand1
+XX7 f_clk_in N005 vddd 0 inverter
+XX8 f_VCO N013 vddd 0 inverter
+XX9 N002 N003 vddd 0 inverter
+XX10 N003 N004 vddd 0 inverter
+XX11 N009 N014 vddd 0 inverter
+XX12 N014 N015 vddd 0 inverter
+XX13 N004 N006 N007 N001 vddd 0 nand2
+XX14 N007 N010 N015 N012 vddd 0 nand2
+XX15 N012 down vddd 0 inverter
+XX16 N006 N002 N009 N010 vddd 0 N007 nand3
+XX17 N001 up vddd 0 inverter
+V3 vddd 0 1.8
+.ends pfd
+
+*****************charge_pump*******************************
+.subckt charge_pump UP Down CP
+X7 UP_bar UP 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X8 DOWN_bar Down 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X12 VDD Down DOWN_bar VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X14 VDD UP UP_bar VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X15 UP_bar 0 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X16 DOWN_bar 0 N004 N004 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X17 N003 N004 N003 N003 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X18 0 VDD VDD 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X19 CP VDD N003 N003 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X20 N003 Down 0 0 sky130_fd_pr__nfet_01v8 l={L} w={74*W}
+X21 N001 VDD UP_bar N001 sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X22 N004 VDD DOWN_bar N004 sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X23 N002 UP N002 N002 sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X24 0 0 VDD VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X25 N002 0 CP N002 sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X26 VDD N001 N002 VDD sky130_fd_pr__pfet_01v8 l={L} w={220*W}
+V1 VDD 0 1.8
+.ends charge_pump
+
+******************VCO*******************************
+.subckt vco_19_16 Vinvco osc
+X7 Vp Vn 0 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+X8 Vp Vp VDD VDD sky130_fd_pr__pfet_01v8 l={L} w={10*W}
+R1 Vn Vinvco 1
+XU22 osc_fb Osc inv_20_10
+XX3 n1 osc_fb Vp Vn cs_inv
+XX16 N005 n1 Vp Vn cs_inv
+XX17 N004 N005 Vp Vn cs_inv
+XX18 N003 N004 Vp Vn cs_inv
+XX19 N002 N003 Vp Vn cs_inv
+XX20 N001 N002 Vp Vn cs_inv
+XX21 osc_fb N001 Vp Vn cs_inv
+V1 VDD 0 1.8
+.ends vco_19_16
+
+******************Frequency divider*******************************
+.subckt freq_div_2 clock Q
+X1 N004 N002 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+VDD VDD 0 1.8
+X2 VDD N002 N004 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X5 N003 N004 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X6 VDD N004 N003 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X7 D clock_b N002 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X3 N002 clock D VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X4 N002 clock N003 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X8 N003 clock_b N002 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X9 Q N001 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X10 VDD N001 Q VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X11 D Q 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X12 VDD Q D VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X13 N004 clock N001 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X14 N001 clock_b N004 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X15 N001 clock_b D 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X16 D clock N001 VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+X17 clock_b clock 0 0 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X18 VDD clock clock_b VDD sky130_fd_pr__pfet_01v8 l={L} w={3*W}
+.ends freq_div_2
+
+.subckt nand1 in1 in2 out VDD GND
+X1 out in1 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={W}
+X2 VDD in2 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X3 VDD in1 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X4 N001 in2 GND GND sky130_fd_pr__nfet_01v8 l={L} w={W}
+.ends nand1
+
+.subckt inverter in out VDD GND
+X1 out in GND GND sky130_fd_pr__nfet_01v8 l={L} w={W}
+X2 VDD in out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+.ends inverter
+
+.subckt nand2 in1 in2 in3 out VDD GND
+X1 out in1 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X2 VDD in2 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X3 VDD in1 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X4 N001 in2 N002 N002 sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X5 N002 in3 GND GND sky130_fd_pr__nfet_01v8 l={L} w={3*W}
+X6 VDD in3 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+.ends nand2
+
+.subckt nand3 in1 in2 in3 in4 VDD GND out
+X1 out in1 N001 N001 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X2 VDD in2 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X3 VDD in1 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X4 N001 in2 N002 N002 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X5 N002 in3 N003 N003 sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X6 VDD in3 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+X7 N003 in4 GND GND sky130_fd_pr__nfet_01v8 l={L} w={4*W}
+X8 VDD in4 out VDD sky130_fd_pr__pfet_01v8 l={L} w={2*W}
+.ends nand3
+
+.subckt inv_20_10 In Out
+X1 Out In 0 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+X2 Out In N001 N001 sky130_fd_pr__pfet_01v8 l={L} w={4*W}
+V1 N001 0 1.8
+.ends inv_20_10
+
+.subckt cs_inv In Out Vp Vn
+X1 N003 Vn 0 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+X4 N002 Vp N001 VDD sky130_fd_pr__pfet_01v8 l={L} w={4*W}
+X3 Out In N002 VDD sky130_fd_pr__pfet_01v8 l={L} w={4*W}
+X2 Out In N003 0 sky130_fd_pr__nfet_01v8 l={L} w={2*W}
+C1 Out 0 1f
+V1 N001 0 1.8
+.ends cs_inv
+
+
+************simulation commands**************
+
+.tran 1ns 15u
+.ic V(vin_vco) = 0
+.control
+run
+plot V(f_in)+8 V(up)+6 V(down)+4 V(Vin_vco)+2 V(f_out) V(f_in)
+
+*plot V(N002)
+*plot V(Vin_vco)
+*plot V(f_out)
+.endc
+.end
+

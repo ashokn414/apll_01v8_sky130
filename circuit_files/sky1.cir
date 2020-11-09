@@ -1,0 +1,23 @@
+* Transistor Vth and I-V characteristic
+.param TEMP=27
+.option scale=1E-6
+* Include SkyWater sky130 device models
+.include "sky130_fd_pr/models/r+c/res_typical__cap_typical__lin.spice"
+.include "sky130_fd_pr/models/r+c/res_typical__cap_typical.spice"
+.include "sky130_fd_pr/models/corners/ff.spice"
+* Netlist Description
+
+X1 vdd n1 0 0 sky130_fd_pr__nfet_01v8 l=0.15 w=0.42
+R1 in n1 55
+* DC source for current measure
+Vin in 0 DC 3.3V
+Vdd vdd 0 DC 3.3V
+
+*simulation commands
+
+.op
+
+.dc Vdd 0 3.3 0.1 Vin 0 3.3 0.3
+
+.end
+
