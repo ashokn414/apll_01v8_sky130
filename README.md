@@ -46,13 +46,16 @@ For example, my circuit files are present in ashdir. then i need to clone sky130
 
 
 ## 6. Pre-layout Simulations
-The complete circuit of PLL is built hierarchically using the following subcircuit blocks.
+The PLL is designed with respect to the following Block-Diagram. All the resistors,capacitors and transistors are modeled from sky130_fd_pr.
 
 
 </p>
 
+![Alt Text](https://github.com/parasgidd/avsdpll_3v3/blob/master/images/block_diagram.png)
+
 </p>
 
+The simulation Waveform obtained for 5Mhz input clock is
 </p>
 
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/images/ngspice_sim_5mhz.PNG)
