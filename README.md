@@ -112,13 +112,17 @@ Fig: Input-Output waveforms of Phase Frequency Detector (PFD) </p>
 ### B. Voltage Controlled Oscillator
 
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/vco/vco.PNG)
+
 </p>
 Fig: Layout of Voltage Controlled Oscillator (VCO).
+
 </p>
 </p>
 
-![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/vco/vco.PNG)
+![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/vco/vcow.PNG)
+
 </p>
+
 Fig: Input-Output waveforms of Voltage Controlled Oscillator (VCO). </p>
 Vin - Input Voltage </p>
 Fout - Output Frequency
@@ -134,7 +138,9 @@ Fig: Layout of Frequency Divider by 2. </p>
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/freqdiv2/freqdiv2w.PNG)
 
 </p>
+
 Fig: Input-Output waveforms of Frequency Divider by 2. </p>
+
 clk - Input Freqency. </p>
 q - Output Freqency (Input Freq. by 2). </p>
 </p>
@@ -143,18 +149,26 @@ q - Output Freqency (Input Freq. by 2). </p>
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/freqdiv2/freqdiv8w.PNG)
 
 </p>
+
 Fig: Input-Output waveforms of Frequency Divider by 8. </p>
+
 clk - Input Freqency. </p>
 q - Output Freqency (Input Freq. by 8). </p>
-</p>
-</p>
-### E. Phase lock Loop 
-</p>
-![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/pll/pll.PNG)
 
 </p>
 </p>
-Fig: Layout of Phase Lock Loop (Combining all the Sub-circuits of PLL). </p> 
+### E. Phase lock Loop 
+
+![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/pll/pll.PNG)
+
+</p>
+
+</p>
+
+Fig: Layout of Phase Lock Loop (Combining all the Sub-circuits of PLL). 
+
+</p> 
+
 </p>
 
 ## 7. Author
