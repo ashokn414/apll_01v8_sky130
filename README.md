@@ -128,6 +128,7 @@ Vin - Input Voltage </p>
 Fout - Output Frequency
 </p>
 </p>
+
 ### C. Frequency Divider by 2
 
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/freqdiv2/freqdiv2.PNG)
@@ -144,6 +145,7 @@ Fig: Input-Output waveforms of Frequency Divider by 2. </p>
 clk - Input Freqency. </p>
 q - Output Freqency (Input Freq. by 2). </p>
 </p>
+
 ### D. Frequency Divider by 8
 
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/freqdiv2/freqdiv8w.PNG)
@@ -157,6 +159,7 @@ q - Output Freqency (Input Freq. by 8). </p>
 
 </p>
 </p>
+
 ### E. Phase lock Loop 
 
 ![Alt Text](https://github.com/ashokn414/avsdpll_01v8_sky130/blob/main/post_layout_simulations/pll/pll.PNG)
@@ -171,20 +174,20 @@ Fig: Layout of Phase Lock Loop (Combining all the Sub-circuits of PLL).
 
 </p>
 
-## 7. Author
+## 8. Author
 - Venkata Ashok Kumar Nallaballe, B.Tech.( ECE ), JNTUA College of Engineering Anantapur , ashoknallaballe@gmail.com
 
-## 8. Contributors 
+## 9. Contributors 
 
 - **Venkata Ashok Kumar Nallaballe** 
 - **Kunal Ghosh** 
 
-## 9. Acknowledgments
+## 10. Acknowledgments
 - Kunal Ghosh, Co-founder VSD Corp. Pvt. Ltd.
 - Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm OSU](https://github.com/neethujohny/avsdpll_3v3)
 
 
-## 10. Contact Information - 
+## 11. Contact Information - 
  - Venkata Ashok Kumar Nallaballe, B.Tech.( ECE ), JNTUA College of Engineering Anantapur , ashoknallaballe@gmail.com
  - Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalghosh@gmail.com
  
