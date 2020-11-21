@@ -1,0 +1,23 @@
+* NGSPICE file created from chargepump.ext - technology: sky130A
+
+
+* Top level circuit chargepump
+
+X0 a_1905_3929# gnd a_1825_3929# gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X1 gnd gnd vdd vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X2 a_2015_2996# dn a_2015_2996# gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X3 a_2015_2996# dn gnd gnd sky130_fd_pr__nfet_01v8 w=2.24e+06u l=150000u
+X4 cp vdd a_2015_2996# gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X5 a_1905_3362# gnd a_1825_3362# gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X6 a_1825_3929# up gnd gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X7 a_2100_4088# up a_2100_4088# vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X8 cp gnd a_2100_4088# vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X9 a_1905_3362# vdd a_1825_3362# vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X10 a_1905_3929# vdd a_1825_3929# vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X11 a_1825_3362# dn gnd gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X12 a_1825_3362# dn vdd vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X13 a_1825_3929# up vdd vdd sky130_fd_pr__pfet_01v8 w=840000u l=150000u
+X14 vdd vdd gnd gnd sky130_fd_pr__nfet_01v8 w=420000u l=150000u
+X15 a_2100_4088# a_1905_3929# vdd vdd sky130_fd_pr__pfet_01v8 w=4e+06u l=150000u
+.end
+
