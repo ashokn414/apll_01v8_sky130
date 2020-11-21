@@ -184,7 +184,7 @@ Fig: Layout of Phase Lock Loop (Combining all the Sub-circuits of PLL).
 
 ## 10. Acknowledgments
 - Kunal Ghosh, Co-founder VSD Corp. Pvt. Ltd.
-- Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm OSU](https://github.com/neethujohny/avsdpll_3v3)
+- Paras Gidd - [On chip clock multiplier using pll(40-100Mhz), 180nm OSU](https://github.com/parasgidd/avsdpll_3v3)
 
 
 ## 11. Contact Information - 
