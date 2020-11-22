@@ -36,6 +36,7 @@ more detailed info can be obtained at [skywater-pdk](https://github.com/google/s
 The design has been built using open-source EDA tools. The library used is sky130_fd_pr that consists of all primitive cells of sky130.
 
 1. [Ngspice](http://ngspice.sourceforge.net/download.html)
+2. [Magic](http://opencircuitdesign.com/magic/)
 
 ## 5. Steps for simulation
 1. To make the simulation files work you need to include libraries of sky130_fd_pr that consists of primitive cells of sky130.
